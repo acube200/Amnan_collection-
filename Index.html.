@@ -1,0 +1,167 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amnan Collection (AC)</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      background: url('https://www.transparenttextures.com/patterns/linen.png');
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header, footer, nav, section, .product-list, .product-card, form, button {
+      padding: 1rem;
+    }
+    header {
+      background-color: #222;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #f4c10f;
+    }
+    .product-list {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .product-card {
+      border: 1px solid #ddd;
+      padding: 1rem;
+      width: 30%;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .product-card img {
+      width: 100%;
+      border-radius: 5px;
+    }
+    .button {
+      background-color: #222;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .new-arrivals, .email-reminder {
+      background-color: #fff;
+      margin: 1rem;
+      border-radius: 10px;
+      padding: 1rem;
+    }
+    footer {
+      text-align: center;
+      background-color: #f4c10f;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">AC</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Sales</a></li>
+        <li><a href="#new-arrivals">New Arrivals</a></li>
+        <li><a href="#reminder">Reminder</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h1>Welcome to Amnan Collection</h1>
+    <p>Your trusted dealer in textile caps, shadda, senator materials & more.</p>
+    <button class="button" onclick="clearHistory()">Delete Recent Goods</button>
+  </section>
+
+  <section id="products">
+    <h2>Our Products</h2>
+    <div class="product-list" id="productList">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x200" alt="Shadda Material" />
+        <h3>Shadda Material</h3>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x200" alt="Senator Material" />
+        <h3>Senator Material</h3>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x200" alt="Textile Cap" />
+        <h3>Textile Cap</h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="new-arrivals" class="new-arrivals">
+    <h2>New Arrivals</h2>
+    <div class="product-list">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x200/FFDFDF" alt="New Arrival 1" />
+        <h3>Exclusive Cap Style</h3>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x200/DFFFDF" alt="New Arrival 2" />
+        <h3>Fresh Senator Fabric</h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="reminder" class="email-reminder">
+    <h2>Set Email Reminder</h2>
+    <form onsubmit="setReminder(event)">
+      <input type="email" id="reminderEmail" placeholder="Your email for updates..." required />
+      <button class="button" type="submit">Set Reminder</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Amnan Collection. All rights reserved.</p>
+    <p>Instagram: @amnan_collection | WhatsApp: 09064705022</p>
+  </footer>
+
+  <script>
+    function clearHistory() {
+      const productList = document.getElementById('productList');
+      productList.innerHTML = "<p>No recent goods. Add new ones below.</p>";
+      alert("Recent goods have been deleted!");
+    }
+    function setReminder(event) {
+      event.preventDefault();
+      const email = document.getElementById("reminderEmail").value;
+      alert("Reminder set! We'll notify you at " + email);
+      document.getElementById("reminderEmail").value = "";
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+
